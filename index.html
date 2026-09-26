@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Bava ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffe6f0, #fff8fb);
+    color: #4a2633;
+    line-height: 1.8;
+}
+
+/* ---------------- COMMON ---------------- */
+
+.page {
+    min-height: 100vh;
+    display: none;
+    padding: 50px 20px;
+}
+
+.active {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+h1, h2 {
+    color: #d6336c;
+}
+
+button {
+    margin-top: 25px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #d6336c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #b92558;
+    transform: scale(1.04);
+}
+
+.back-btn {
+    background: #888;
+}
+
+/* ---------------- BIRTHDAY ---------------- */
+
+#birthday {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, #fff, transparent 40%),
+        linear-gradient(135deg, #ffd6e7, #fff0f6);
+}
+
+.birthday-content {
+    animation: fadeIn 1.5s ease;
+}
+
+.big-heart {
+    font-size: 85px;
+    animation: heartbeat 1.5s infinite;
+}
+
+#birthday h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+#birthday p {
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.subtitle {
+    color: #8c5367;
+}
+
+/* ---------------- PASSWORD ---------------- */
+
+#passwordPage {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.password-box {
+    background: rgba(255,255,255,0.85);
+    padding: 45px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 35px rgba(150,60,90,0.15);
+    max-width: 500px;
+    width: 100%;
+}
+
+.lock {
+    font-size: 65px;
+}
+
+.password-box h1 {
+    margin: 15px 0;
+}
+
+input {
+    width: 280px;
+    max-width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: 2px solid #f3a6c1;
+    border-radius: 30px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+#wrongPassword {
+    display: none;
+    color: #d00000;
+    margin-top: 15px;
+}
+
+/* ---------------- STORY ---------------- */
+
+#story {
+    padding: 60px 20px;
+}
+
+.story-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.story-header h1 {
+    font-size: 42px;
+}
+
+.story-header p {
+    margin-top: 10px;
+    color: #76505d;
+}
+
+.story-card {
+    background: rgba(255,255,255,0.88);
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 25px;
+    box-shadow: 0 7px 25px rgba(150,60,90,0.10);
+}
+
+.story-card h2 {
+    margin-bottom: 18px;
+}
+
+.story-card p {
+    margin-bottom: 13px;
+}
+
+/* ---------------- PHOTOS ---------------- */
+
+#storyPhotos,
+#memories,
+#questions,
+#final {
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h1 {
+    font-size: 40px;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.photos img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+}
+
+/* ---------------- QUESTIONS ---------------- */
+
+.question {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 22px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.question h3 {
+    color: #d6336c;
+    margin-bottom: 10px;
+}
+
+.question input {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* ---------------- FINAL ---------------- */
+
+#final {
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, #fff, transparent 50%),
+        linear-gradient(135deg, #ffd6e7, #fff0f6);
+}
+
+.final-box {
+    max-width: 750px;
+    margin: auto;
+}
+
+.final-heart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-box h1 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.final-photo {
+    width: 100%;
+    max-width: 600px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin: 25px 0;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+}
+
+.final-message {
+    background: rgba(255,255,255,0.75);
+    padding: 30px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.final-message p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    color: #d6336c;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+/* ---------------- ANIMATION ---------------- */
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:600px) {
+
+    #birthday h1 {
+        font-size: 38px;
+    }
+
+    .story-header h1,
+    .section-title h1 {
+        font-size: 32px;
+    }
+
+    .story-card {
+        padding: 22px;
+    }
+
+    .photos img {
+        height: 240px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     1. HAPPY BIRTHDAY
+===================================================== -->
+
+<section id="birthday">
+
+    <div class="birthday-content">
+
+        <div class="big-heart">❤️</div>
+
+        <h1>Happy Birthday Bava!</h1>
+
+        <p>🎂 September 27 🎂</p>
+
+        <p class="subtitle">
+            A little surprise made especially for you... 🌸
+        </p>
+
+        <button onclick="openPassword()">
+            Open Your Surprise 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. PASSWORD
+===================================================== -->
+
+<section id="passwordPage" class="page">
+
+    <div class="password-box">
+
+        <div class="lock">🔐</div>
+
+        <h1>Our Story is Secret ❤️</h1>
+
+        <p>
+            Some memories are meant to be opened with a secret.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Secret Password"
+        >
+
+        <br>
+
+        <button onclick="checkPassword()">
+            Unlock Our Story 🌸
+        </button>
+
+        <p id="wrongPassword">
+            Wrong password! Try again ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. FULL STORY
+===================================================== -->
+
+<section id="story" class="page">
+
+<div class="container">
+
+    <div class="story-header">
+
+        <h1>🌸 The Way We Became Us </h1>
+
+        <p>
+            Some stories don't begin with love at first sight.
+            Sometimes they begin with childhood, family,
+            teasing, fights and little moments.
+        </p>
+
+    </div>
+
+
+    <!-- START -->
+
+    <div class="story-card">
+
+        <h2>🌸 Where It Started</h2>
+
+        <p>
+            Some stories don't begin with love at first sight.
+            Sometimes they begin with family, childhood memories,
+            teasing, little fights, and two people who slowly become
+            important to each other.
+        </p>
+
+        <p>
+            Pavan Kumar was born on 27 September 2000.
+        </p>
+
+        <p>
+            He studied at school, completed his diploma at
+            Visakha College, and later studied engineering at
+            Avanthi Engineering College.
+        </p>
+
+        <p>
+            He was placed in Guntur as a Senior Electrician Engineer.
+        </p>
+
+        <p>
+            I had known Pavan through our family.
+            We met at family functions and parties.
+        </p>
+
+        <p>
+            During those days, we were basically
+            Tom and Jerry. 🐱🐭
+        </p>
+
+        <p>
+            We teased each other, argued, and shared our own
+            funny little moments.
+        </p>
+
+        <p>
+            When I was around 10 years old,
+            I already liked him as a person.
+        </p>
+
+    </div>
+
+
+    <!-- FIRST CONVERSATIONS -->
+
+    <div class="story-card">
+
+        <h2>💬 The First Conversations</h2>
+
+        <p>
+            Around 2019, our conversations slowly started.
+        </p>
+
+        <p>
+            In December, I sent him my first message.
+        </p>
+
+        <p>
+            It wasn't a dramatic beginning.
+            It was simply one message that slowly turned
+            into more conversations.
+        </p>
+
+    </div>
+
+
+    <!-- 10TH CLASS -->
+
+    <div class="story-card">
+
+        <h2>💔 My 10th-Class Chapter</h2>
+
+        <p>
+            When I was in 10th class, I experienced
+            a one-sided love that didn't work out.
+        </p>
+
+        <p>
+            I told Pavan about it.
+        </p>
+
+        <p>
+            He supported me when I was feeling low
+            and encouraged me not to keep crying.
+        </p>
+
+        <p>
+            He was there when I was down,
+            and that support stayed with me.
+        </p>
+
+        <p>
+            After some time, we stopped talking for a while.
+        </p>
+
+        <p>
+            Later, we started chatting again.
+        </p>
+
+        <p>
+            Somewhere along the way,
+            I realized that my feelings for him were still there.
+        </p>
+
+        <p>
+            I slowly developed a crush on him.
+        </p>
+
+    </div>
+
+
+    <!-- GIRLFRIEND -->
+
+    <div class="story-card">
+
+        <h2>💔 The Girlfriend Chapter</h2>
+
+        <p>
+            Later, Pavan told me that he had a girlfriend.
+        </p>
+
+        <p>
+            I felt disappointed, so I decided to focus on my studies.
+        </p>
+
+        <p>
+            But our story didn't end there.
+        </p>
+
+        <p>
+            During my 1st year of engineering,
+            we started talking much more.
+        </p>
+
+        <p>
+            Our conversations became longer and more frequent.
+        </p>
+
+        <p>
+            And as we became closer,
+            we also had more fights and misunderstandings.
+        </p>
+
+        <p>
+            There were both good days and difficult days.
+        </p>
+
+    </div>
+
+
+    <!-- SUPPORT -->
+
+    <div class="story-card">
+
+        <h2>🌧️ When He Was Hurting</h2>
+
+        <p>
+            Later, Pavan and his girlfriend had problems,
+            and eventually they broke up.
+        </p>
+
+        <p>
+            During that difficult time,
+            I supported him.
+        </p>
+
+        <p>
+            He had once supported me when I was hurting,
+            and now I wanted to be there for him.
+        </p>
+
+    </div>
+
+
+    <!-- CHANGE -->
+
+    <div class="story-card">
+
+        <h2>🌱 We Both Changed</h2>
+
+        <p>
+            As time passed, I changed in some ways because
+            I wanted to become the person he wanted me to be.
+        </p>
+
+        <p>
+            Pavan was changing too.
+        </p>
+
+        <p>
+            He became more focused on his work and career.
+        </p>
+
+        <p>
+            Somewhere during this journey,
+            his feelings for me started to grow.
+        </p>
+
+        <p>
+            From August onward, I noticed him showing
+            his feelings toward me more openly.
+        </p>
+
+    </div>
+
+
+    <!-- SEPTEMBER 2025 -->
+
+    <div class="story-card">
+
+        <h2>🎂 September 2025 — A Special Birthday Memory</h2>
+
+        <p>
+            Pavan's birthday is September 27.
+        </p>
+
+        <p>
+            In September 2025, from September 1 to September 26,
+            I gave him advance birthday wishes.
+        </p>
+
+        <p>
+            During that time, I gave him my first gift. 🎁
+        </p>
+
+        <p>
+            We also had a picture together that day. 📸
+        </p>
+
+        <p>
+            It became one of those memories
+            I wanted to keep forever.
+        </p>
+
+    </div>
+
+
+    <!-- NOVEMBER -->
+
+    <div class="story-card">
+
+        <h2>📍 November 4 — He Came to Meet Me</h2>
+
+        <p>
+            On November 4, Pavan came to Simhachalam to meet me.
+        </p>
+
+        <p>
+            It was another special moment in our growing story.
+        </p>
+
+        <p>
+            Around this period, we were also talking every day.
+        </p>
+
+        <p>
+            We shared even the smallest information
+            about our days with each other.
+        </p>
+
+        <p>
+            Those little conversations became an important
+            part of our connection.
+        </p>
+
+    </div>
+
+
+    <!-- BIRTHDAY -->
+
+    <div class="story-card">
+
+        <h2>🎂 My Birthday</h2>
+
+        <p>
+            My birthday is in December.
+        </p>
+
+        <p>
+            By then, our everyday conversations and growing
+            connection had made the little moments between us special.
+        </p>
+
+    </div>
+
+
+    <!-- SANKRANTHI -->
+
+    <div class="story-card">
+
+        <h2>🪁 Four Years of Sankranthi Memories</h2>
+
+        <p>
+            For the past four years, Pavan has come to meet me
+            during Sankranthi.
+        </p>
+
+        <p>
+            Sankranthi 2025 was especially memorable.
+        </p>
+
+        <p>
+            In December, we did online shopping together
+            for Sankranthi. 🛍️
+        </p>
+
+        <p>
+            Then in January, we went for offline shopping together.
+        </p>
+
+        <p>
+            We also went on an Araku trip,
+            where we created many special memories together.
+        </p>
+
+        <p>
+            On Bhogi day, we went shopping too.
+        </p>
+
+        <p>
+            There was even a tiny moment when I touched his hand,
+            and it felt incredibly special to me. 🤍
+        </p>
+
+    </div>
+
+
+    <!-- JANUARY 16 -->
+
+    <div class="story-card">
+
+        <h2>🌸 January 16, 2026</h2>
+
+        <p>
+            January 16, 2026 became another memorable day
+            and a first special affectionate moment for us.
+        </p>
+
+        <p>
+            It was one of those little moments
+            that stayed in my heart.
+        </p>
+
+    </div>
+
+
+    <!-- FEBRUARY -->
+
+    <div class="story-card">
+
+        <h2>🌹 February — Love, Fights & Ishq</h2>
+
+        <p>
+            February brought a mixture of emotions.
+        </p>
+
+        <p>
+            There were fights, love, misunderstandings,
+            and ishq.
+        </p>
+
+        <p>
+            It wasn't always perfect,
+            but every emotion became another part of our story.
+        </p>
+
+    </div>
+
+
+    <!-- MARCH -->
+
+    <div class="story-card">
+
+        <h2>🌸 March — Little Signs of Love</h2>
+
+        <p>
+            In March, we started keeping loving statuses.
+        </p>
+
+        <p>
+            On March 19, 2026, we had matching dresses. 👗❤️
+        </p>
+
+        <p>
+            It was a simple moment,
+            but it became another beautiful memory.
+        </p>
+
+        <p>
+            Then came March 27, 2026.
+        </p>
+
+        <p>
+            Pavan suddenly had an accident.
+        </p>
+
+        <p>
+            I was shocked and extremely worried about him.
+        </p>
+
+        <p>
+            That moment reminded me how much
+            his presence mattered to me.
+        </p>
+
+    </div>
+
+
+    <!-- VIZAG -->
+
+    <div class="story-card">
+
+        <h2>🏙️ Three Months in Vizag</h2>
+
+        <p>
+            After the accident, Pavan stayed in Vizag
+            for about three months.
+        </p>
+
+        <p>
+            Those three months became especially meaningful.
+        </p>
+
+        <p>
+            We spent more time together and created
+            many memories.
+        </p>
+
+        <p>
+            Pavan also introduced me to his family,
+            which became an important moment in our journey.
+        </p>
+
+    </div>
+
+
+    <!-- MAY -->
+
+    <div class="story-card">
+
+        <h2>🛕 May 19 — Simhachalam</h2>
+
+        <p>
+            On May 19, 2026, we went to Simhachalam Temple together.
+        </p>
+
+        <p>
+            Another day, another memory. ❤️
+        </p>
+
+    </div>
+
+
+    <!-- JUNE -->
+
+    <div class="story-card">
+
+        <h2>🎬 June 19 — Bus & Cinema</h2>
+
+        <p>
+            On June 19, 2026, we travelled by bus together
+            to watch a movie at Tata Theatre.
+        </p>
+
+        <p>
+            It was a simple outing,
+            but those simple moments became some
+            of our favorite memories. 🚌🎬
+        </p>
+
+    </div>
+
+
+    <!-- JULY -->
+
+    <div class="story-card">
+
+        <h2>❤️ July — More Love & Care</h2>
+
+        <p>
+            In July 2026, I noticed more loving statuses,
+            more memories, and more expressions of love and care.
+        </p>
+
+        <p>
+            Our connection felt stronger.
+        </p>
+
+    </div>
+
+
+    <!-- AUGUST -->
+
+    <div class="story-card">
+
+        <h2>🏠 August — A Week Together</h2>
+
+        <p>
+            In August 2026, Pavan came to Vizag for his housewarming.
+        </p>
+
+        <p>
+            For about a week, he would pick me up
+            and drop me back at my house.
+        </p>
+
+        <p>
+            I also went to his house.
+        </p>
+
+        <p>
+            Those everyday moments felt special because
+            we weren't just creating big memories —
+            we were sharing ordinary moments together too. 🏡❤️
+        </p>
+
+    </div>
+
+
+    <!-- SEPTEMBER 4 -->
+
+    <div class="story-card">
+
+        <h2>🎬 September 4 — Back to the Same Theatre</h2>
+
+        <p>
+            On September 4, 2026, we went to the cinema again.
+        </p>
+
+        <p>
+            And we went to the same theatre where
+            we had gone before.
+        </p>
+
+        <p>
+            Another little piece of our story.
+        </p>
+
+    </div>
+
+
+    <!-- WHERE WE ARE -->
+
+    <div class="story-card">
+
+        <h2>❤️ Where We Are Now</h2>
+
+        <p>
+            Looking back, our story has had everything.
+        </p>
+
+        <p>Childhood memories.</p>
+
+        <p>Tom-and-Jerry fights.</p>
+
+        <p>A slow beginning.</p>
+
+        <p>First conversations.</p>
+
+        <p>A difficult past.</p>
+
+        <p>Disappointment.</p>
+
+        <p>Support.</p>
+
+        <p>Long conversations.</p>
+
+        <p>Misunderstandings.</p>
+
+        <p>Fights.</p>
+
+        <p>Growing feelings.</p>
+
+        <p>Birthday wishes.</p>
+
+        <p>Our first gift.</p>
+
+        <p>Sankranthi traditions.</p>
+
+        <p>Shopping.</p>
+
+        <p>Araku memories.</p>
+
+        <p>Cinema trips.</p>
+
+        <p>Family.</p>
+
+        <p>Accidents that made us worry.</p>
+
+        <p>Love and care.</p>
+
+        <p>
+            And countless small moments
+            that only the two of us truly understand.
+        </p>
+
+        <p>
+            Our story was never perfect.
+        </p>
+
+        <p>
+            But it was real.
+        </p>
+
+        <p>
+            We supported each other when one of us was down.
+        </p>
+
+        <p>
+            We shared happiness when things were good.
+        </p>
+
+        <p>
+            We changed.
+        </p>
+
+        <p>
+            We grew.
+        </p>
+
+        <p>
+            We fought.
+        </p>
+
+        <p>
+            We came back.
+        </p>
+
+        <p>
+            And somewhere between all those moments,
+            we became us. ❤️
+        </p>
+
+    </div>
+
+
+    <div class="story-card center">
+
+        <h2>🌸 This is our story.</h2>
+
+        <p>
+            Not just one day.
+        </p>
+
+        <p>
+            Not just one memory.
+        </p>
+
+        <p>
+            But all the little moments that brought us here.
+        </p>
+
+        <p>
+            And this story is still being written… 💗
+        </p>
+
+        <button onclick="showPage('storyPhotos')">
+            Continue to Our Photos 📸
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     4. STORY PHOTOS
+===================================================== -->
+
+<section id="storyPhotos" class="page">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h1>📸 A Few Special Moments</h1>
+
+        <p>
+            Three little pictures from our story. ❤️
+        </p>
+
+    </div>
+
+    <div class="photos">
+
+        <img src="start.jpg" alt="Special Story Photo 1">
+
+        <img src="aruku.1.jpeg" alt="Special Story Photo 2">
+
+    </div>
+
+    <div class="center">
+
+        <button onclick="showPage('memories')">
+            Continue to Our Memories 🖼️
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     5. NORMAL PHOTO GALLERY
+===================================================== -->
+
+<section id="memories" class="page">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h1>🖼️ Our Memories</h1>
+
+        <p>
+            Some moments are small, but they become unforgettable.
+        </p>
+
+    </div>
+
+    <div class="photos">
+
+        <img src="aruku.2.jpeg" alt="Memory 1">
+
+        <img src="aruku.3.jpeg" alt="Memory 2">
+
+        <img src="match.jpg" alt="Memory 3">
+
+        
+
+    </div>
+
+    <div class="center">
+
+        <button onclick="showPage('questions')">
+            One Last Little Surprise 💌
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     6. QUESTIONS
+===================================================== -->
+
+<section id="questions" class="page">
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h1>💌 A Few Secret Questions</h1>
+
+        <p>
+            Take your time and answer them. ❤️
+        </p>
+
+    </div>
+
+
+    <div class="question">
+
+        <h3>1. What is your favorite memory with me?</h3>
+
+        <input
+            type="text"
+            placeholder="Your answer..."
+        >
+
+    </div>
+
+
+    <div class="question">
+
+        <h3>2. Which moment from our story do you remember the most?</h3>
+
+        <input
+            type="text"
+            placeholder="Your answer..."
+        >
+
+    </div>
+
+
+    <div class="question">
+
+        <h3>3. What was your first impression of me?</h3>
+
+        <input
+            type="text"
+            placeholder="Your answer..."
+        >
+
+    </div>
+
+
+    <div class="question">
+
+        <h3>4. Which place or outing should we remember forever?</h3>
+
+        <input
+            type="text"
+            placeholder="Your answer..."
+        >
+
+    </div>
+
+
+    <div class="question">
+
+        <h3>5. What do you want to say to me today?</h3>
+
+        <input
+            type="text"
+            placeholder="Write anything..."
+        >
+
+    </div>
+
+
+    <div class="center">
+
+        <button onclick="showPage('final')">
+            Finish Our Little Journey 🎁
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     7. FINAL ENDING
+===================================================== -->
+
+<section id="final" class="page">
+
+<div class="final-box">
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+    <h1>Happy Birthday, Bava! 🎂</h1>
+
+    <img
+        src="143.jpg"
+        alt="Our Final Special Photo"
+        class="final-photo"
+    >
+
+    <div class="final-message">
+
+        <p>
+            From childhood memories to all the moments
+            we have shared today, every little chapter
+            has become a part of our story.
+        </p>
+
+        <p>
+            We had laughter.
+            We had misunderstandings.
+            We had fights.
+            We had beautiful memories.
+        </p>
+
+        <p>
+            And through all those little moments,
+            this story became something special.
+        </p>
+
+        <p>
+            I hope this birthday brings you
+            lots of happiness, peace, success,
+            and beautiful memories.
+        </p>
+
+        <p>
+            Thank you for being a special part
+            of my journey. 🌸
+        </p>
+
+        <p>
+            Some stories have a perfect beginning.
+            Ours didn't.
+        </p>
+
+        <p>
+            But maybe that's what makes it ours.
+        </p>
+
+        <p class="signature">
+            Happy Birthday once again, Bava! ❤️
+        </p>
+
+        <p>
+            🌸 Our story is still being written… 🌸
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function openPassword() {
+
+    document.getElementById("birthday").style.display = "none";
+
+    document.getElementById("passwordPage").style.display = "flex";
+
+    window.scrollTo(0, 0);
+}
+
+
+function checkPassword() {
+
+    const password =
+        document.getElementById("password").value;
+
+    const correctPassword =
+        "0327";
+
+
+    if (password === correctPassword) {
+
+        document.getElementById("passwordPage").style.display = "none";
+
+        document.getElementById("story").style.display = "block";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+    else {
+
+        document.getElementById("wrongPassword").style.display = "block";
+
+    }
+
+}
+
+
+function showPage(pageId) {
+
+    const pages = [
+        "story",
+        "storyPhotos",
+        "memories",
+        "questions",
+        "final"
+    ];
+
+    pages.forEach(function(page) {
+
+        document.getElementById(page).style.display = "none";
+
+    });
+
+
+    document.getElementById(pageId).style.display = "flex";
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+</html>
